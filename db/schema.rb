@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2019_12_02_192205) do
   create_table "follows", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "followee_id"
+    t.integer "follower_id"
   end
 
   create_table "posts", force: :cascade do |t|
