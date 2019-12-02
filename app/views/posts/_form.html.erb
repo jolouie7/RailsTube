@@ -1,0 +1,14 @@
+<h1>Post Partial</h1>
+<div>
+  <%= form_for @post, url: posts_path do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :descripton %>
+    <%= f.text_area :description %>
+
+    <label>LIKES</label>
+
+    <%= f.submit %>
+  <% end %>
+</div>
