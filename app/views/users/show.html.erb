@@ -1,2 +1,12 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Profile Page</h1>
+<h3>Username: <%= @user.name %>  </h3>
+<h3>Password: <%= @user.password_digest %>  </h3>
+<h3>Age: <%= @user.age %>  </h3>
+<h3>Gender: <%= @user.gender %>  </h3>
+
+<p>
+  Created <%= time_ago_in_words(@user.created_at, include_seconds: true) %> ago
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> <br>
+<%= link_to 'Delete', new_user_path(@user), method: :delete %>
