@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authorized, only[:new, :create, :destroy]
   def index
     @users= User.all.order("created_at DESC")
   end
@@ -11,7 +12,8 @@ class UsersController < ApplicationController
     @user= User.new(user_params)
     # byebug
     if @user.save
-      redirect_to @user
+      session[:user_id] = @user.id
+      redirect_to "/welcome"
     else
       render 'new'
     end
