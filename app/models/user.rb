@@ -16,4 +16,6 @@ class User < ApplicationRecord
     # validates :password_confirmation, confirmation: true
     validates :age, numericality: true
 
+    has_secure_password
+
 end
