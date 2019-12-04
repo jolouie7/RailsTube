@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def create
     @user= User.new(user_params)
+    password =
     # byebug
     if @user.save
       session[:user_id] = @user.id
@@ -48,6 +49,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :password_digest, :age, :gender)
+    params.require(:user).permit(:name, :username, :password, :password_confirmation , :age, :gender)
   end
 end

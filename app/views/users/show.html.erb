@@ -7,6 +7,16 @@
 <p>
   Created <%= time_ago_in_words(@user.created_at, include_seconds: true) %> ago
 </p>
+<!-- 
+<%= link_to 'Logout', logout_path, method: :delete %> <br>
+-->
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'> <br>
+<% end %>
+<%= link_to 'Edit Profile', edit_user_path(@user) %> <br>
 
-<%= link_to 'Edit', edit_user_path(@user) %> <br>
-<%= link_to 'Delete', new_user_path(@user), method: :delete %>
+<!-- Doesn't work -->
+<%#= link_to 'Delete Account', new_user_path(@user), method: :delete %>
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'> <br>
+<% end %>
