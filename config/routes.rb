@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   resources :posts do 
     resources :comments
   end
-  resources :users
+  resources :users do 
+    resources :comments
+  end
+  resources :users do 
+    resources :posts
+  end
+  # resources :users
   root "sessions#welcome", as: "welcome"
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
