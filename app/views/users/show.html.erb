@@ -13,7 +13,7 @@
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
   <input type=submit value='logout'> <br>
 <% end %>
-<%= link_to 'Edit Profile', edit_user_path(@user) %> <br>
+<%= link_to 'Edit Profile', edit_user_path(@user), class:"btn btn-primary"  %> <br>
 
 <!-- Doesn't work -->
 <%#= link_to 'Delete Account', new_user_path(@user), method: :delete %>

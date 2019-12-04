@@ -1,17 +1,22 @@
-<h1>Post Partial</h1>
-<div>
+<h1>Create a New Post</h1>
+
   <%= form_for @post do |f| %>
+  <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
-
+ </div>
+ <div>
     <%= f.label :descripton %>
     <%= f.text_area :description %>
-
+</div>
+<div>
     <%= f.label :like %>
     <%= f.number_field :like %>
-
-    <%= f.hidden_field :user_id, :value => 1 %>
-
-    <%= f.submit %>
-  <% end %>
+  </div>
+<div>
+    <%= f.hidden_field :user_id, value: current_user %>
 </div>
+<div>
+    <%= f.submit class:"btn btn-primary" %>
+    </div>
+  <% end %>
