@@ -56,3 +56,4 @@ gem 'faker'
 
 gem "jquery-rails"
 gem 'bootstrap-sass'
+gem 'carrierwave'

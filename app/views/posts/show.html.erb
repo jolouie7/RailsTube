@@ -1,8 +1,14 @@
 <h1>Welcome to your post</h1>
-<h3>Title: <%= @post.name %>  </h3>
-<h3>Description: <%= @post.description %>  </h3>
-<h3> Created by: <%= @post.user.username.capitalize %> </h3>
+<h3>Title: <%= @post.name %></h3><br>
+<p>
+  <video controls width="640" height="480" src="<%= @post.video %>"></video>
+</p>
+
+<strong>Description: <%= @post.description %></strong>
+<p> Created by: <%= @post.user.username.capitalize %> </p>
 <p>Like: <%= @post.like %> </p>
+
+
 <p>
   Submitted <%= time_ago_in_words(@post.created_at, include_seconds: true) %> ago
 </p>
