@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root "sessions#welcome", as: "welcome"
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
-  post "logout", to: "sessions#destroy" # is this suppose to be delete instead of get?
+  delete "logout", to: "sessions#destroy" # is this suppose to be delete instead of get?
   get "welcome", to: "sessions#welcome"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
