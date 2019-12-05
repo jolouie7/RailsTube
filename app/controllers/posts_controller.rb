@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts= Post.all.order("created_at DESC")
+    # @user = User.find(params[:id])
   end
 
   def new
@@ -21,6 +22,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @user = User.find(params[:id])
     @comment = Comment.new
   end
 
