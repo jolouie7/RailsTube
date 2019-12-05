@@ -1,14 +1,21 @@
-<h1>Profile Page</h1>
-<h3>Username: <%= @user.name %>  </h3>
-<h3>Age: <%= @user.age %>  </h3>
-<h3>Gender: <%= @user.gender %>  </h3>
+<div style="text-align:center">
+  <h1>Profile Page</h1>
+  <h3>Username: <%= @user.name %>  </h3>
+  <h3>Age: <%= @user.age %>  </h3>
+  <h3>Gender: <%= @user.gender %>  </h3>
 
-<p>
-  Created <%= time_ago_in_words(@user.created_at, include_seconds: true) %> ago
-</p>
+  <p>
+    Created <%= time_ago_in_words(@user.created_at, include_seconds: true) %> ago
+  </p>
 
-<%= button_to "logout", logout_path, :method => :delete, class: "btn btn-info" %>
+  <%= button_to "logout", logout_path, :method => :delete, class: "btn btn-info" %>
+  <br>
+  <!-- 
+  <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary"  %>
+  -->
+  <%= button_to 'Edit Profile', edit_user_path(@user), :method => :post, class: "btn btn-primary"  %>
+  <br>
 
-<%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary"  %> <br>
-
-<%= button_to "delete", @user, :method => :delete, class: "btn btn-danger" %>
+  <%= button_to "delete", @user, :method => :delete, class: "btn btn-danger" %>
+  <br>
+</div>

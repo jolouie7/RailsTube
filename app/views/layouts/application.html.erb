@@ -16,9 +16,24 @@
   </head>
 
   <body>
-    <% unless controller_name == "posts" %>
-      <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse navbar-custom"> </nav>
-    <% end %>
+    <%# if "http://localhost:3000/" %>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">RailsTube</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href=<%= "/users/#{session[:user_id]}/user_posts" %>>User Posts</a></li>
+            <li><a href=<%= "/users/#{params[:id]}" %>>Profile Page</a></li>
+            <li><a href=<%= new_post_path %>>Create new post</a></li>
+            <li> <%#= button_to "Profule Poge", user_posts_path(current_user), :method => :get, class: "btn btn-primary" %> </li>
+            <!--
+            <li><%= button_to "logout", logout_path, :method => :delete %></li>
+            -->
+          </ul>
+        </div>
+      </nav>
+    <%# end %>
     <%= yield %>
   </body>
 </html>
