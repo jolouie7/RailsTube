@@ -1,6 +1,7 @@
-<h1>All of Our Recent Posts</h1>
+<h1>All Posts</h1>
+
 
 <% @posts.each do |p| %>
   <%= link_to p.name, p %><br> 
-  Posted By: <%= link_to p.user.username.capitalize, "/users/#{p.user.id}/user_posts" %> <br><br>
+  Posted By: <%= link_to p.user.username, "/users/#{p.user.id}/user_posts" %> <br><br>
 <% end %>

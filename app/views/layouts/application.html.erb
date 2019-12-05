@@ -16,6 +16,9 @@
   </head>
 
   <body>
+    <% unless controller_name == "posts" %>
+      <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse navbar-custom"> </nav>
+    <% end %>
     <%= yield %>
   </body>
 </html>
