@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
     @comment = Comment.new
   end
 
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:name, :description, :user_id, :like)
+    params.require(:post).permit(:name, :description, :user_id, :like, :video)
     #Like was not included
   end
 end
