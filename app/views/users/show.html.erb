@@ -8,14 +8,20 @@
     Created <%= time_ago_in_words(@user.created_at, include_seconds: true) %> ago
   </p>
 
-  <%= button_to "logout", logout_path, :method => :delete, class: "btn btn-info" %>
-  <br>
-  <!-- 
-  <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary"  %>
-  -->
-  <%= button_to 'Edit Profile', edit_user_path(@user), :method => :post, class: "btn btn-primary"  %>
-  <br>
+  <%= button_to "#{@user.username.capitalize}'s Posts", custom_user_posts_path, :method => :get, class:"btn btn-info" %>
 
-  <%= button_to "delete", @user, :method => :delete, class: "btn btn-danger" %>
-  <br>
+  <% if current_user == @user %>
+    <br>
+    <%= button_to "logout", logout_path, :method => :delete, class: "btn btn-warning" %>
+    <br>
+    <!--
+    <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary"  %>
+    -->
+    <%= button_to 'Edit Profile', edit_user_path(@user), :method => :post, class: "btn btn-primary"  %>
+    <br>
+
+    <%= button_to "delete", @user, :method => :delete, class: "btn btn-danger" %>
+    <br>
+  <% end %>
+
 </div>

@@ -24,7 +24,7 @@
           </div>
           <ul class="nav navbar-nav">
             <li><a href=<%= "/users/#{session[:user_id]}/user_posts" %>>User Posts</a></li>
-            <li><a href=<%= "/users/#{params[:id]}" %>>Profile Page</a></li>
+            <li><a href=<%= "/users/#{session[:user_id]}" %>>Profile Page</a></li>
             <li><a href=<%= new_post_path %>>Create new post</a></li>
             <li> <%#= button_to "Profule Poge", user_posts_path(current_user), :method => :get, class: "btn btn-primary" %> </li>
             <!--

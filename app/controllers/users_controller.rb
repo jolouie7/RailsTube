@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # skip_before_action :authorized, only: [:new, :create, :destroy, :index]
+  skip_before_action :authorized, only: [:new, :create, :destroy, :index]
   def index
     @users= User.all.order("created_at DESC")
   end
@@ -22,8 +22,8 @@ class UsersController < ApplicationController
 
 
   def show
-    # byebug
     @user = User.find(params[:id])
+    # byebug
   end
 
   def edit

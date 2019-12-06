@@ -1,5 +1,7 @@
-<h1>List of User Accounts</h1>
+<div style="text-align:center">
+  <h1>List of User Accounts</h1>
 
-<% @users.each do |u| %>
-  <%= link_to u.name.capitalize, u %> <br>
-<% end %>
+  <% @users.each do |u| %>
+    <%= link_to u.name.capitalize, u %> <br>
+  <% end %>
+</div>
