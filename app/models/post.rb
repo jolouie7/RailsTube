@@ -4,4 +4,5 @@ class Post < ApplicationRecord
     mount_uploader :video, FileUploader
     validates :name, presence: true
     validates :description, presence: true
+    validates :video, presence: true
 end

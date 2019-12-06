@@ -21,3 +21,10 @@
     <%= f.submit class:"btn btn-primary" %>
   <% end %>
 </div>
+
+<br>
+    <strong><% if @user.errors.full_messages.any? %>
+  <% @user.errors.full_messages.each do |error_message| %>
+    <div style="color:red"> <%= error_message %>! </div> 
+  <% end %>
+<% end %><strong>

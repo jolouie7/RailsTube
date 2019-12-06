@@ -12,10 +12,11 @@ class User < ApplicationRecord
     has_many :followees, through: :followee_follows, source: :followee
 
 
-    # validates :username, presence: true, uniqueness: true
-    validates :password_digest, presence: true
+    validates :username, presence: true, uniqueness: true
+    validates :password, presence: true
     # validates :password_confirmation, confirmation: true
     validates :age, numericality: true
+
 
     has_secure_password
 

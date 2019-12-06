@@ -1,27 +1,35 @@
 <h1>Create a New Post</h1>
 
   <%= form_for @post do |f| %>
-  <div>
+  
     <%= f.label :name %>
     <%= f.text_field :name %>
- </div>
- <div>
+ 
+ <br>
     <%= f.label :descripton %>
     <%= f.text_area :description %>
-</div>
-<div>
+
+
     <%= f.label :like %>
     <%= f.number_field :like %>
-  </div>
-<div>
+  
+
     <%= f.hidden_field :user_id, value: current_user.id %>
-</div>
-<div>
+
+
     <%= f.label :video %>
     <%= f.file_field :video, accept: 'video/mp4'%>
     
-</div>
-<div>
+
+
     <%= f.submit class:"btn btn-primary" %>
-    </div>
+    
+    <% end %>
+
+    <br>
+    <strong><% if @post.errors.full_messages.any? %>
+  <% @post.errors.full_messages.each do |error_message| %>
+    <div style="color:red"> <%= error_message %>! </div> 
   <% end %>
+<% end %><strong>
+  
