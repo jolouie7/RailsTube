@@ -3,6 +3,6 @@
 <% @posts.each do |p| %>
   <div style="margin-left: 5rem;">
     <%= link_to p.name, p %><br> 
-    Posted By: <%= link_to p.user.username, "/users/#{p.user.id}/user_posts" %> <br><br>
+    Posted By: <%= link_to p.user.username.capitalize, "/users/#{p.user.id}/user_posts" %> <br><br>
   </div>
 <% end %>

@@ -6,3 +6,4 @@
   <li><%= link_to p.name, p %> </li>
   </ul> 
 <% end %>
+<strong> Click here to view <%= link_to @user.username.capitalize, "/users/#{@user.id}"%>'s Profile</strong>
