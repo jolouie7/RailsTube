@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def new
     @user= User.new
   end
-
+  
   def create
     @user= User.new(user_params)
     # password =
@@ -19,10 +19,11 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-
-
+  
+  
   def show
     @user = User.find(params[:id])
+    @follow = Follow.new
     # byebug
   end
 

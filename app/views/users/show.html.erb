@@ -17,11 +17,23 @@
     <!--
     <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary"  %>
     -->
-    <%= button_to 'Edit Profile', edit_user_path(@user), :method => :post, class: "btn btn-primary"  %>
+    <%= button_to 'Edit Profile', edit_user_path(@user), :method => :get, class: "btn btn-primary"  %>
     <br>
 
     <%= button_to "delete", @user, :method => :delete, class: "btn btn-danger" %>
     <br>
   <% end %>
+
+  <h3>Follow Users</h3>
+<%#= form_tag(follows_path, method: "post") do %>
+<%= form_for(@follow) do |f| %>
+  <%= f.collection_select :followee_id, User.all, :id, :username %>
+  <%= f.submit("Follow")%>
+<%end%>
+
+<h3>Your Follows</h3>
+<% @user.followees.each do |f| %>
+  <%= f.username.capitalize %>,
+<% end %>
 
 </div>

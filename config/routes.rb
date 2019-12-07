@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users do 
     resources :posts
   end
+  resources :follows
   get 'users/:id/user_posts', to: 'users#user_posts', as: "custom_user_posts"
   # resources :users
   root "sessions#welcome", as: "welcome"
