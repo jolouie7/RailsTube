@@ -3,7 +3,7 @@
 Blog site allowing users to create blogs and interact with other users blogs
 
 ## Technologies used
-Ruby on Rails, SQLite3
+Ruby on Rails, SQLite3, Bcrypt, Erb.
 
 ## Features
 - Creating a blog post
